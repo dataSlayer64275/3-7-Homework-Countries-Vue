@@ -19,12 +19,13 @@ export default {
   data() {
     return {
       countries: [],
-      selectedCountry: []
+      // Set this to be null if passing in an entire object, this allows us to use v-if to render.
+      selectedCountry: null
     };
   },
   components: {
-    'country-list' : CountryList,
-    'country-detail' : CountryDetail
+    CountryList,
+    CountryDetail
   },
   mounted(){
     fetch('https://restcountries.eu/rest/v2/all')
